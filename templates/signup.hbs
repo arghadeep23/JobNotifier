@@ -5,20 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Montserrat:wght@300&display=swap"
+        rel="stylesheet">
 </head>
 <body>
-
-    <h1>Sign Up</h1>
-
-    <form action="/signup" method="post">
-
-    <input type="text" name="name" placeholder="Name">
-    <input type="password" name="password" placeholder="Password">
-    <input type="submit">
+    <div id="nav">
+        <div id="logo">
+            <img src="jobjunction-high-resolution-logo.png" alt="">
+        </div>
+        <div id="nav_links">
+            <h4>Home</h4>
+            <h4>Jobs</h4>
+            <h4>About Us</h4>
+            <h4>Profile</h4>
+        </div>
+    </div>
+    <div id="main">
+        <div id="content">
+            <div id="heading">
+                Join our platform to discover a wide range of
+                job opportunities tailored for you!
+            </div>
+            <div id="subheading">
+                3,00,000+ companies are hiring on JobJunction
+            </div>
+            <form action="/signup" method="post">
+            
+                <input type="text" name="first_name" placeholder="First Name">
+                <input type="text" name="second_name" placeholder="Second Name">
+                <input type="text" name="email" placeholder="Enter email">
+                <input type="password" name="password" placeholder="Password">
+                <input type="submit">
+            
+            </form>
+        </div>
+        <div id="graphics">
+            <img src="signup-vector.jpg" alt="">
+        </div>
+    </div>
     
-
-    </form>
 
 </body>
 </html>

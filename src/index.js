@@ -41,6 +41,22 @@ app.post("/signup", async(req,res)=>{
     res.render("home")
 })
 
+app.post('/login', async (req, res) => {
+    try {
+        const check = await collection.findOne({ name: req.body.name })
+        if (check.password === req.body.password) {
+            res.status(201).render("home", { naming: `${req.body.password}+${req.body.name}` })
+        }
+        else {
+            res.send("incorrect password")
+        }
+    } 
+    catch (e) {
+        res.send("wrong details")
+    }
+})
+
+
 app.listen(4200,()=>{
     console.log("Server running at port 4200")
 })

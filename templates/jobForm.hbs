@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobJunction</title>
+    <link rel="stylesheet" href="jobForm.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="nav">
+        <div id="logo">
+            <img src="jobjunction-high-resolution-logo.png" alt="">
+        </div>
+    </div>
+    <div id="main">
+        <div id="center_div">
+            <div id="heading">
+                Find the perfect fit for your role . JobJunction has got you covered !
+            </div>
+            <form method="post" action="/jobForm">
+                <div id="take">
+                    <label for="companyName" id="lf">Company Name  </label>
+                    <input type="text" name="companyName" id="companyName" class="inp">
+                </div>
+                <div id="take">
+                    <label for="jobTitle" id="lf">Job Title  </label>
+                    <input type="text" name="jobTitle" id="jobTitle" class="inp">
+                </div>
+                <div id="take">
+                    <label for="jobDescription" id="lf">Job Description  </label>
+                    <textarea name="jobDescription" id="jobDescription" rows="5" cols="39"></textarea>
+                </div>
+                <div id="take">
+                    <label for="eligibility" id="lf">Eligibility </label>
+                    <textarea name="eligibility" id="eligibility" rows="5" cols="39"></textarea>
+                </div>
+                <div id="take">
+                    <label for="skills" id="lf">Enter skills needed</label>
+                    <input name="skillsNeeded" type="text" id="skills" class="inp">
+                </div>
+                <div id="take">
+                    <label for="salary" id="lf">Salary</label>
+                    <input name="salary" type="text" id="salary" class="inp">
+                </div>
+                <div id="take">
+                    <label for="link" id="lf">Application Link</label>
+                    <input name="applicationLink" type="text" id="link" class="inp">
+                </div>
+                <div id="take">
+                    <label for="logoURL" id="lf">Logo URL</label>
+                    <input name="logoURL" type="text" id="logoURL" class="inp">
+                </div>
+               
+                    <input type="submit" id="submit">
+                
+            </form>
+        </div>
+        <div id="graphics">
+            <img src="jobform_vector.jpg" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

@@ -6,11 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="signup.css">
-    <link rel="stylesheet" href="./style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Montserrat:wght@300&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+    {{!-- <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&family=Montserrat:wght@100&family=Nunito+Sans&display=swap"
+        rel="stylesheet"> --}}
 </head>
 <body>
     <div id="nav">
@@ -21,7 +24,6 @@
             <h4>Home</h4>
             <h4>Jobs</h4>
             <h4>About Us</h4>
-            <h4>Profile</h4>
         </div>
     </div>
     <div id="main">
@@ -34,12 +36,26 @@
                 3,00,000+ companies are hiring on JobJunction
             </div>
             <form action="/signup" method="post">
-            
-                <input type="text" name="first_name" placeholder="First Name">
-                <input type="text" name="second_name" placeholder="Second Name">
-                <input type="text" name="email" placeholder="Enter email">
-                <input type="password" name="password" placeholder="Password">
-                <input type="submit">
+                <div id="take-name">
+                    <div id="name_div">
+                        <label for="f_name" id="lf">First Name</label>
+                        <input type="text" name="first_name" id="f_name">
+                    </div>
+                    <div id="name_div">
+                        <label for="l_name" id="lf">Last Name</label>
+                        <input type="text" name="second_name" id="l_name">
+                    </div>
+                </div>
+                <div id="take-email">
+                    <label for="email" id="lf">Email</label>
+                    <input type="text" name="email" id="email">
+                </div>
+                <div id="take-password">
+                    <label for="password" id="lf">Password</label>
+                    <input type="password" name="password" id="password">
+                </div>
+                
+                <input type="submit" id="submit" value="Sign Up"> 
             
             </form>
         </div>

@@ -26,7 +26,7 @@ body {
 }
 #logo {
     height: 100%;
-    padding-top: 16px;
+    padding-top: 16px;    
 }
 #logo img {
     width: 200px;
@@ -37,12 +37,14 @@ body {
     width: 40%;
     height : 100%;
     display: flex;
-    justify-content: space-around;
+    gap : 50px;
     padding-top: 16px;
+    padding-left : 60px;
 }
 
 #nav_links h4 {
     font-size: 20px;
+    cursor : pointer;
 }
 #main{
     display : flex;
@@ -61,8 +63,9 @@ body {
     padding-top : 100px;
 }
 #graphics img{
-    width: 530px;
-    height: 510px;
+    width: 600px;
+    height: 99%;
+    border-radius: 30px;
 }
 #heading{
     font-size : 40px;
@@ -78,6 +81,49 @@ body {
 form { 
     display : flex;
     position : relative; 
-    width : 20%;
+    width : 100%;
     flex-direction: column;
+    gap : 30px;
+    font-family: 'Nunito Sans', sans-serif;
+}
+#take-name{
+    display : flex; 
+    width : 100%;
+    flex-direction : row;
+    justify-content: flex-start;
+    gap : 20px;
+}
+#lf{
+    display : block;
+}
+#name_div input{
+    width : 200px; 
+    height : 40px;
+    padding : 10px; 
+    font-size: 17px;
+    font-family: 'Nunito Sans', sans-serif;
+}
+#take-email input{
+    font-family: 'Nunito Sans', sans-serif;
+    font-size: 17px;
+}
+#email,#password{
+    width : 420px; 
+    height : 40px; 
+    padding: 10px;
+}
+#submit{
+    width: 420px;
+    height: 40px;
+    border-radius: 30px;
+    background-color: #0A66C2;
+    color : white;
+    font-size : 17px;
+    font-family: 'Nunito Sans', sans-serif;
+    border : none; 
+    outline : none;
+}
+#submit:hover{
+    background-color: #0a3b6b;
+    cursor : pointer;
 }

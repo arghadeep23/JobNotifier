@@ -20,6 +20,20 @@ app.get("/", (req, res) => {
     res.render("login");
 });
 
+app.get('/jobs', async (req, res) => {
+    try {
+        // Retrieve all job postings from MongoDB
+        const jobs = await job.find(); // Assuming 'Job' is your Mongoose model
+
+        // Render your Handlebars template and pass the 'jobs' data to it
+        res.render('jobs', { jobs }); // 'jobs' is an array of job postings
+    } catch (err) {
+        // Handle any errors that occur during fetching job postings
+        console.error(err);
+        res.status(500).send('Server Error');
+    }
+});
+
 app.get("/signup", (req, res) => {
     res.render("signup");
 });
@@ -48,13 +62,13 @@ app.post("/jobForm", async (req, res) => {
         jobTitle: req.body.jobTitle,
         skillsNeeded: req.body.skillsNeeded,
         jobDescription: req.body.jobDescription,
-        salary: req.body.salary,
+        location: req.body.location,
         eligibility: req.body.eligibility,
         applicationLink: req.body.applicationLink,
         logoURL: req.body.logoURL
     };
     await job.insertMany([data]);
-    res.render("home");
+    res.render("jobForm");
 })
 app.post("/login", async (req, res) => {
     try {

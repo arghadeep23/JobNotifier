@@ -127,3 +127,10 @@ form {
     background-color: #0a3b6b;
     cursor : pointer;
 }
+a{
+    text-decoration : none; 
+    color : #000;
+}
+a:hover{
+    text-decoration : underline;
+}

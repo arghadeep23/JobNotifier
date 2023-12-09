@@ -33,7 +33,22 @@ app.get('/jobs', async (req, res) => {
         res.status(500).send('Server Error');
     }
 });
+app.get('/jobs2', async (req, res) => {
+    try {
+        // Retrieve all job postings from MongoDB
+        const jobs = await job.find(); // Assuming 'Job' is your Mongoose model
 
+        // Render your Handlebars template and pass the 'jobs' data to it
+        res.render('jobs2', { jobs }); // 'jobs' is an array of job postings
+    } catch (err) {
+        // Handle any errors that occur during fetching job postings
+        console.error(err);
+        res.status(500).send('Server Error');
+    }
+});
+app.get('/jobForm2', (req, res) => {
+    res.render("jobForm2")
+})
 app.get("/signup", (req, res) => {
     res.render("signup");
 });
@@ -68,8 +83,29 @@ app.post("/jobForm", async (req, res) => {
         logoURL: req.body.logoURL
     };
     await job.insertMany([data]);
-    res.render("jobForm");
+    res.render("jobForm2");
 })
+app.post("/jobForm2", async (req, res) => {
+    try {
+        const mostRecentJob = await job.findOne().sort({ _id: -1 }); // Get the latest job
+        const data = {
+            salary: req.body.salary,
+            experience: req.body.experience,
+            jobType: req.body.jobType
+        }
+        if (mostRecentJob) {
+            mostRecentJob.salary = data.salary;
+            mostRecentJob.experience = data.experience;
+            mostRecentJob.jobType = data.jobType;
+            await mostRecentJob.save();
+        }
+        res.render("jobForm");
+    } catch (err) {
+        console.error(err);
+        res.status(500).send('Server Error');
+    }
+});
+
 app.post("/login", async (req, res) => {
     try {
         const check = await collection.findOne({ email: req.body.email });

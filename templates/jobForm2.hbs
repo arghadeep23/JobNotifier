@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobJunction</title>
+    <link rel="stylesheet" href="jobForm2.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="nav">
+        <div id="logo">
+            <img src="jobjunction-high-resolution-logo.png" alt="">
+        </div>
+    </div>
+    <div id="main">
+        <div id="center_div">
+            <div id="heading">
+                Find the perfect fit for your role . JobJunction has got you covered !
+            </div>
+            <form method="post" action="/jobForm2">
+                <div id="take">
+                    <label for="salary" id="lf">Salary </label>
+                    <input type="text" name="salary" id="salary" class="inp">
+                </div>
+                <div id="take">
+                    <label for="experience" id="lf">Experience Needed </label>
+                    <input type="text" name="experience" id="experience" class="inp">
+                </div>
+                <div id="take">
+                    <label for="jobType" id="lf">Type of job : Part-Time/Full-Time/Intern</label>
+                    <input name="jobType" type="text" id="jobType" class="inp">
+                </div>
+                <input type="submit" id="submit" value="Save all job details">
+            </form>
+        </div>
+        <div id="graphics">
+            <img src="jobform_vector.jpg" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

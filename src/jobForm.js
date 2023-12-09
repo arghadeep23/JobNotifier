@@ -31,6 +31,15 @@ const jobSchema = new mongoose.Schema({
     },
     logoURL: {
         type: String
+    },
+    salary: {
+        type: String
+    },
+    experience: {
+        type: String
+    },
+    jobType: {
+        type: String
     }
 });
 

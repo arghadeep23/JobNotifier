@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobJunction</title>
+    <link rel="stylesheet" href="job_details.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="nav">
+        <div id="logo">
+            <img src="jobjunction-high-resolution-logo.png" alt="">
+        </div>
+        <div id="nav_links">
+            <a href="home">
+                <h4>Home</h4>
+            </a>
+            <a href="jobs">
+                <h4>Jobs</h4>
+            </a>
+            <a href="about_us">
+                <h4>About Us</h4>
+            </a>
+            <a href="profile">
+                <h4>Profile</h4>
+            </a>
+        </div>
+    </div>
+    <p>
+    </p>
+    <div id="main">
+            <div id="image">
+                <img src={{check.logoURL}} alt="">
+            </div>
+            <div id="details">
+                <div id="jobTitle">
+                    <b>Job Title : </b>{{check.jobTitle}}
+                </div>
+                <div id="companyName">
+                    <b>Company Name : </b>{{check.companyName}}
+                </div>
+                <div id="jobDescription">
+                    <b>Job Description : </b><span>{{check.jobDescription}}</span>
+                </div>
+                <div id="eligibility">
+                    <b>Eligibility : </b><span>{{check.eligibility}}</span>
+                </div>
+                <div id="skillsNeeded">
+                    <b>Skills Required : </b><span>{{check.skillsNeeded}}</span>
+                </div>
+                <div id="salary">
+                    <b>Salary : </b><span>{{check.salary}}</span>
+                </div>
+                <div id="location">
+                    <b>Location : </b><span>{{check.location}}</span>
+                </div>
+                <div id="applicationLink">
+                    <b>Application Link : </b><span><a href="https://www.youtube.com/">Apply Now</a></span>
+                </div>
+            </div>
+        
+    </div>
+</body>
+
+</html>

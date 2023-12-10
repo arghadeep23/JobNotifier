@@ -84,19 +84,26 @@
                             <p>{{experience}}</p>
                         </div>
                     </div>
+                    <div id="show_jobtype">
+                        <div id="icon">
+                            <i class="fa-solid fa-clipboard"></i>
+                            <p>Job Type</p>
+                        </div>
+                        <div id="show_jobType2">
+                            <p>{{jobType}}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div id="view_details">
-                <div id="button">
-                    <a href={applicationLink}>
-                        <p>View Details</p>
-                    </a>
-                </div>
-            </div>
+                <button id="view_details" onclick="showDetails('{{_id}}')">View Details</button>
         </div>
         {{/each}}
     </div>
-
+    <script>
+        function showDetails(id) {
+            window.location.href = id;
+        }  
+    </script>
 </body>
 
 </html>

@@ -37,3 +37,13 @@ html,body{
 #nav_links h4{
     font-size : 20px;
 }
+#nav_links a,
+#heading a {
+    text-decoration: none;
+    color: black;
+}
+
+#nav_links a:hover,
+#heading a:hover {
+    text-decoration: underline;
+}

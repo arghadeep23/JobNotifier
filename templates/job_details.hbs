@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JobJunction</title>
-    <link rel="stylesheet" href="profile.css">
+    <link rel="stylesheet" href="job_details.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
@@ -33,32 +33,39 @@
             </a>
         </div>
     </div>
+    <p>
+    </p>
     <div id="main">
-        <div id="log-box">
             <div id="image">
-                <img src="avatar.jpg" alt="">
+                <img src={{check.logoURL}} alt="">
             </div>
             <div id="details">
-                <p>
-                    <b>Name : </b>{{user.firstName}} {{user.lastName}}
-                </p>
-                <p>
-                    <b>Email : </b>{{user.email}}
-                </p>
-                <p>
-                    <b>Education : </b><span>Indian Institute of Information Technology Vadodara</span>
-                </p>
-                <p>
-                    <b>Skills : </b><span>Python, C++, Java, HTML, CSS, Javascript</span>
-                </p>
-                <p>
-                    <b>Languages : </b><span>English, Hindi</span>
-                </p>
+                <div id="jobTitle">
+                    <b>Job Title : </b>{{check.jobTitle}}
+                </div>
+                <div id="companyName">
+                    <b>Company Name : </b>{{check.companyName}}
+                </div>
+                <div id="jobDescription">
+                    <b>Job Description : </b><span>{{check.jobDescription}}</span>
+                </div>
+                <div id="eligibility">
+                    <b>Eligibility : </b><span>{{check.eligibility}}</span>
+                </div>
+                <div id="skillsNeeded">
+                    <b>Skills Required : </b><span>{{check.skillsNeeded}}</span>
+                </div>
+                <div id="salary">
+                    <b>Salary : </b><span>{{check.salary}}</span>
+                </div>
+                <div id="location">
+                    <b>Location : </b><span>{{check.location}}</span>
+                </div>
+                <div id="applicationLink">
+                    <b>Application Link : </b><span><a href="https://www.youtube.com/">Apply Now</a></span>
+                </div>
             </div>
-            <div id="logout-link">
-                <p>Want to <a href="/logout">Logout ?</a></p>
-            </div>
-        </div>
+        
     </div>
 </body>
 

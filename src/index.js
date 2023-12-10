@@ -30,6 +30,12 @@ const requireLogin = (req, res, next) => {
     else
         next()
 }
+const requireLogin2 = (req, res, next) => {
+    if (!req.session.user_id)
+        res.redirect("../login")
+    else
+        next()
+}
 connectdb();
 app.get("/jobForm", (req, res) => {
     res.render("jobForm");
@@ -72,8 +78,8 @@ app.get("/login", (req, res) => {
     res.render("login");
 });
 app.get("/home", requireLogin, (req, res) => {
-    console.log(req.session.user_id)
-    console.log(typeof (req.session.user_id))
+    // console.log(req.session.user_id)
+    // console.log(typeof (req.session.user_id))
     res.render("home");
 });
 
@@ -91,7 +97,7 @@ app.post("/signup", async (req, res) => {
     const user = new collection(data)
     await user.save();
     req.session.user_id = user._id;
-    res.render("home");
+    res.redirect("home");
 });
 app.post("/jobForm", async (req, res) => {
     const data = {
@@ -155,10 +161,46 @@ app.post("/logout", (req, res) => {
     res.render("login");
 })
 app.get("/profile", requireLogin, async (req, res) => {
-    console.log("Came to profile")
+    // console.log("Came to profile")
     const user = await collection.findById(req.session.user_id)
     res.render("profile", { user })
 })
+app.get("/about_us", (req, res) => {
+    res.render("about_us")
+})
+// app.get('/:id', requireLogin, async (req, res) => {
+//     // res.send("Welcome to individual job page") 
+//     const id = req.params.id;
+//     const job1 = await job.findById(id);
+//     res.render('job_details', { job1 });
+//     // Fetch job data based on id from database
+//     // job.findById(req.params.id)
+//     //     .then(job => {
+//     //         res.render('job-details', { job });
+//     //     })
+//     //     .catch(err => {
+//     //         console.log(err);
+//     //         res.redirect('/');
+//     //     });
+// });
+app.get('/:id', async (req, res) => {
+    // await job.findById(req.params.id)
+    //     .then(job => {
+    //         res.render('job_details', { job });
+    //     }).catch(err)
+
+    try {
+        const check = await job.findById(req.params.id);
+        // console.log(check.companyName)
+        // res
+        //     .status(201)
+        //     .render("home", { naming: `${req.body.password}+${req.body.email}` });
+        res.render("job_details", { check })
+    }
+    catch (e) {
+        console.log(e)
+    }
+});
 app.listen(4200, () => {
     console.log("Server running at port 4200");
 });
